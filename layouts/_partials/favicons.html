@@ -1,0 +1,10 @@
+{{- $ico := resources.Get "favicon/favicon.ico" -}}
+{{- $svg := resources.Get "favicon/favicon.svg" -}}
+{{- $png96 := resources.Get "favicon/favicon-96x96.png" -}}
+{{- $apple := resources.Get "favicon/apple-touch-icon.png" -}}
+{{- $manifest := resources.Get "favicon/site.webmanifest" -}}
+<link rel="icon" href="{{ $ico.RelPermalink }}" sizes="32x32" />
+<link rel="icon" href="{{ $svg.RelPermalink }}" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="96x96" href="{{ $png96.RelPermalink }}" />
+<link rel="apple-touch-icon" href="{{ $apple.RelPermalink }}" />
+<link rel="manifest" href="{{ $manifest.RelPermalink }}" />

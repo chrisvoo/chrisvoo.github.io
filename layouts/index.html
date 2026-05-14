@@ -1,0 +1,177 @@
+{{ define "main" }}
+
+{{/* ===== HERO SECTION ===== */}}
+<section class="hero-section" aria-label="Profile hero">
+
+  <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+  <div class="hero-inner">
+
+    {{/* Avatar with spinning glow ring */}}
+    <div class="hero-avatar-wrap">
+      <img
+        class="hero-avatar"
+        src="{{ "images/avatar.jpg" | relURL }}"
+        alt="Christian Castelli"
+        width="152"
+        height="152"
+        loading="eager"
+      />
+    </div>
+
+    {{/* Name and role */}}
+    <div class="hero-identity">
+      <h1 class="hero-name">Christian Castelli</h1>
+      <p class="hero-title">Senior Software Engineer</p>
+    </div>
+
+    {{/* Skill pills — delay cascades from 0.80 s + 0.07 s per tag */}}
+    <div class="hero-skills" aria-label="Skills">
+      {{ $skills := slice "TypeScript" "JavaScript" "PHP" "Java" "Bash" "Angular" "React" "Nest.js" "Docker" "AWS" "PostgreSQL" "MongoDB" }}
+      {{ range $i, $s := $skills }}
+        <span
+          class="hero-skill-tag"
+          style="animation-delay: {{ printf "%.2f" (add 0.8 (mul $i 0.07)) }}s"
+        >{{ $s }}</span>
+      {{ end }}
+    </div>
+
+    {{/* Short bio */}}
+    <p class="hero-bio">
+      Full-stack engineer with nearly twenty years across LAMP, JEE, MERN and serverless
+      architectures &mdash; specialising in scalable microservices, automating workflows,
+      and leading technical migrations. Currently at <strong>Docebo</strong>.
+    </p>
+
+    {{/* CTA buttons */}}
+    <div class="hero-cta">
+
+      <a
+        class="hero-btn hero-btn--primary"
+        href="{{ "resume.pdf" | relURL }}"
+        download
+        aria-label="Download CV as PDF"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" class="hero-btn-icon">
+          <path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"/>
+        </svg>
+        Download CV
+      </a>
+
+      <a
+        class="hero-btn hero-btn--ghost"
+        href="https://www.linkedin.com/in/christiancastelli"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true" class="hero-btn-icon">
+          <path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+        </svg>
+        LinkedIn
+      </a>
+
+      <a
+        class="hero-btn hero-btn--ghost"
+        href="https://github.com/chrisvoo"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub profile"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true" class="hero-btn-icon">
+          <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/>
+        </svg>
+        GitHub
+      </a>
+
+    </div>{{/* /hero-cta */}}
+
+  </div>{{/* /hero-inner */}}
+</section>
+
+{{/* ===== RECENT POSTS ===== */}}
+<section class="hero-recent">
+  {{ partial "recent-articles.html" . }}
+</section>
+
+{{/* ===== CANVAS ANIMATION ===== */}}
+<script>
+(function () {
+  "use strict";
+  var canvas = document.getElementById("hero-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var dots = [];
+  var SPACING = 40;
+  var MAX_DIST = 90;
+  var rmo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    dots = [];
+    var cols = Math.ceil(canvas.width  / SPACING) + 1;
+    var rows = Math.ceil(canvas.height / SPACING) + 1;
+    for (var r = 0; r < rows; r++) {
+      for (var c = 0; c < cols; c++) {
+        var ox = c * SPACING, oy = r * SPACING;
+        dots.push({
+          x: ox, y: oy, ox: ox, oy: oy,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35
+        });
+      }
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var dark = document.documentElement.classList.contains("dark");
+    var dotC  = dark ? "rgba(139,92,246,0.40)" : "rgba(109,40,217,0.28)";
+    var lineC = dark ? "rgba(139,92,246,0.14)" : "rgba(109,40,217,0.10)";
+
+    if (!rmo) {
+      for (var i = 0; i < dots.length; i++) {
+        var d = dots[i];
+        d.x += d.vx;
+        d.y += d.vy;
+        if (Math.abs(d.x - d.ox) > 14) d.vx *= -1;
+        if (Math.abs(d.y - d.oy) > 14) d.vy *= -1;
+      }
+    }
+
+    for (var i = 0; i < dots.length; i++) {
+      for (var j = i + 1; j < dots.length; j++) {
+        var dx   = dots[i].x - dots[j].x;
+        var dy   = dots[i].y - dots[j].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < MAX_DIST) {
+          ctx.beginPath();
+          ctx.globalAlpha = (1 - dist / MAX_DIST) * 0.8;
+          ctx.strokeStyle = lineC;
+          ctx.lineWidth   = 0.6;
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    ctx.globalAlpha = 1;
+    for (var i = 0; i < dots.length; i++) {
+      ctx.beginPath();
+      ctx.fillStyle = dotC;
+      ctx.arc(dots[i].x, dots[i].y, 1.8, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+  draw();
+}());
+</script>
+
+{{ end }}

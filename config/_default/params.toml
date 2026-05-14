@@ -1,0 +1,47 @@
+colorScheme = "congo"         # built-in palette; others: avocado, cherry, fire, ocean, slate
+defaultAppearance = "dark"    # auto | light | dark
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+enableImageLazyLoading = true
+enableImageWebp = true
+
+showReadingTime = true
+showBreadcrumbs = true
+showTableOfContents = true
+showAuthor = true
+showDate = true
+showWordCount = false
+
+[header]
+  showTitle = true
+  layout = "hybrid"
+
+[footer]
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[article]
+  showDate = true
+  showTaxonomies = true
+  showComments = true
+  showRelatedContent = true
+  sharingLinks = ["linkedin", "email", "telegram", "reddit", "facebook", "mastodon"]
+
+[list]
+  showSummary = true
+  showBreadcrumbs = true
+  showTaxonomies = true
+  groupByYear = true
+
+[homepage]
+  layout = "page"
+  showRecent = true
+  recentLimit = 5
+
+[sitemap]
+  excludedKinds = []
+
+[author]
+  name = "Christian Castelli"

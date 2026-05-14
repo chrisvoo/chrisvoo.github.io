@@ -1,0 +1,24 @@
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# Hugo module cache (Go module cache is managed outside the repo)
+/tmp/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment / secrets
+.env
+.env.local
+
+# Claude Code local settings (machine-specific permissions)
+.claude/settings.local.json

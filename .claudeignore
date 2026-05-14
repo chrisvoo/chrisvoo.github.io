@@ -1,0 +1,13 @@
+# Hugo build output — large and fully generated, not useful for Claude to read
+public/
+resources/
+
+# Go module cache references pulled in from outside the repo
+go.sum
+
+# Binary and image assets — not meaningful as text
+static/images/
+assets/favicon/
+
+# Lock files
+.hugo_build.lock

@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: chrisvoo/blog
+  branch: main
+  # No base_url needed — Personal Access Token auth requires no proxy
+
+# Note public_folder starts with /blog/ to match the subpath baseURL
+# otherwise Sveltia CMS generates broken image paths.
+media_folder: "static/images/uploads"
+public_folder: "/blog/images/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title",    label: "Title",        widget: "string" }
+      - { name: "date",     label: "Date",          widget: "datetime" }
+      - { name: "draft",    label: "Draft",         widget: "boolean", default: false }
+      - { name: "tags",     label: "Tags",          widget: "list",    required: false }
+      - { name: "series",   label: "Series",        widget: "string",  required: false }
+      - { name: "summary",  label: "Summary",       widget: "text",    required: false }
+      - { name: "comments", label: "Enable comments", widget: "boolean", default: true }
+      - { name: "body",     label: "Content",       widget: "markdown" }

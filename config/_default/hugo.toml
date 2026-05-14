@@ -1,0 +1,12 @@
+baseURL = "https://chrisvoo.github.io/blog/"
+locale = "en"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+series = "series"
