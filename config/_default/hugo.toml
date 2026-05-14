@@ -1,4 +1,4 @@
-baseURL = "https://chrisvoo.github.io/blog/"
+baseURL = "https://chrisvoo.github.io/"
 locale = "en"
 defaultContentLanguage = "en"
 enableRobotsTXT = true

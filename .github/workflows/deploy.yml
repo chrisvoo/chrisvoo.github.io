@@ -18,24 +18,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0          # full history for .Lastmod
 
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: "stable"    # required for Hugo Modules
 
       - name: Setup Hugo (Extended)
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v3.2.1
         with:
           hugo-version: latest
           extended: true          # Congo uses SCSS
 
       - name: Build
-        run: hugo --minify --baseURL "https://chrisvoo.github.io/blog/"
+        run: hugo --minify --baseURL "https://chrisvoo.github.io/"
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: public
 
@@ -46,5 +46,5 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v5
         id: deployment
