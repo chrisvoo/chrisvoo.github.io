@@ -54,8 +54,7 @@ cd blog
 hugo new site . --force
 ```
 
-### 
-2. Congo Theme via Hugo Modules
+### 2. Congo Theme via Hugo Modules
 
 Hugo Modules is the preferred Congo install method (easier upgrades than submodules). The following snippets perfectly reflects this website's configuration, so it already acts as a demo.
 
