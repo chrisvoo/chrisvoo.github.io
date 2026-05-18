@@ -28,6 +28,7 @@ It's been passed a long time since I had a blog. In an attempt to start again to
 ## Set up
 
 ### 
+
 Prerequisites
 
 Start installing [Go](https://go.dev/doc/install), gh and Hugo. The following command will use Brew since I'm using a Mac:
