@@ -91,7 +91,7 @@ config/
 Let's modify the configuration (`config/_default/hugo.toml`) for base URL, locale, search bar and tags:
 
 ```toml
-baseURL = "https://chrisvoo.github.io/blog/"
+baseURL = "https://chrisvoo.github.io/"
 locale = "en"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
@@ -103,6 +103,11 @@ enableRobotsTXT = true
 tag = "tags"
 category = "categories"
 series = "series"
+
+[markup]
+  [markup.highlight]
+    noClasses = false   # emit CSS classes (.chroma .k etc.) instead of inline styles
+    style = "monokai"   # Chroma style — controls token colours in the generated CSS
 ```
 
 Now the params (`config/_default/params.toml`) for defining the peculiarities of header, footer and articles:
