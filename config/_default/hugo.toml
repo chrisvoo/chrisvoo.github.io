@@ -10,3 +10,8 @@ enableRobotsTXT = true
 tag = "tags"
 category = "categories"
 series = "series"
+
+[markup]
+  [markup.highlight]
+    noClasses = false   # emit CSS classes (.chroma .k etc.) instead of inline styles
+    style = "monokai"   # Chroma style — controls token colours in the generated CSS

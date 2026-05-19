@@ -1,4 +1,20 @@
 /* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+
+/* Chroma emits .chroma on the <pre> when noClasses = false.
+   Override the background here; token colours come from the
+   generated chroma CSS that Hugo inlines automatically. */
+.chroma {
+  background-color: #1e1e2e !important; /* dark: Catppuccin Mocha base */
+  border-radius: 0.4rem;
+}
+
+html:not(.dark) .chroma {
+  background-color: #f5f5f5 !important; /* light: near-white */
+}
+
+/* ============================================================
    HOMEPAGE HERO — custom.css
    Congo auto-bundles this file if it exists at assets/css/custom.css
    Dark mode: Congo toggles .dark on <html>; all colours use CSS vars

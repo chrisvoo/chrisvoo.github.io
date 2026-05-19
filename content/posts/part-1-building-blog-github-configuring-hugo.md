@@ -7,13 +7,13 @@ tags:
   - cms
   - github
 series: ''
-summary: First part of a series of post for building a blog with GitHub
+summary: First part of a series of posts for building a blog with GitHub
 comments: true
 ---
 
 ![A woman writing a blog post about how to create a blog](/images/uploads/Gemini_Generated_Image_sy58jjsy58jjsy58.png)
 
-It's been passed a long time since I had a blog. In an attempt to start again to write and keep interesting things as my memories, something that could be useful for both myself and others bumping into it, I looked for a cheap but effective solution. Here is the one I'm currently using.
+It's been a long time since I had a blog. In an attempt to start again to write and keep interesting things as my memories, something that could be useful for both myself and others bumping into it, I looked for a cheap but effective solution. Here is the one I'm currently using.
 
 ## Stack
 
@@ -27,11 +27,9 @@ It's been passed a long time since I had a blog. In an attempt to start again to
 
 ## Set up
 
-### 
+### Prerequisites
 
-Prerequisites
-
-Start installing [Go](https://go.dev/doc/install), gh and Hugo. The following command will use Brew since I'm using a Mac:
+Start by installing [Go](https://go.dev/doc/install), gh and Hugo. The following command will use Brew since I'm using a Mac:
 
 ```plain
 brew install hugo go gh
@@ -40,7 +38,7 @@ hugo version   # must show hugo v0.x.x+extended
 go version     # needed for Hugo Modules (Congo install method)
 ```
 
-[gh](https://cli.github.com) (the GitHbB CLI) is certainly optional, but it's pretty good and fast operate with it instead of searching for the things you need in GitHub settings.
+[gh](https://cli.github.com) (the GitHub CLI) is certainly optional, but it's pretty good and fast to operate with instead of searching for the things you need in GitHub settings.
 
 ### 1. Repository & Hugo Scaffold
 
@@ -56,7 +54,7 @@ hugo new site . --force
 
 ### 2. Congo Theme via Hugo Modules
 
-Hugo Modules is the preferred Congo install method (easier upgrades than submodules). The following snippets perfectly reflects this website's configuration, so it already acts as a demo.
+Hugo Modules is the preferred Congo install method (easier upgrades than submodules). The following snippets perfectly reflect this website's configuration, so it already acts as a demo.
 
 - Initialize the module:
 
@@ -73,7 +71,7 @@ path = "github.com/jpanther/congo/v2"
 
 Then pull it:
 
-```toml
+```sh
 hugo mod get -u
 ```
 
@@ -194,7 +192,7 @@ Finally the menu items. The search icon in the nav requires a menu entry with `
     icon = "search"
 ```
 
-Putting the code below in `content/_index.md`,  prevent Congo's `page` homepage layout from rendering a duplicate `<h1>` with the site title (which also appears in the header logo). An empty frontmatter file suppresses the title in the page body while keeping the recent-posts list.
+Putting the code below in `content/_index.md` prevents Congo's `page` homepage layout from rendering a duplicate `<h1>` with the site title (which also appears in the header logo). An empty frontmatter file suppresses the title in the page body while keeping the recent-posts list.
 
 ```markdown
 ---
@@ -202,4 +200,4 @@ draft: false
 ---
 ```
 
-The following blog posts will explain the remaining parts to be describe. 🤘
+The following blog posts will explain the remaining parts to be described. 🤘
