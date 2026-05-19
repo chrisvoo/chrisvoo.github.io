@@ -3,6 +3,9 @@ public/
 resources/
 .hugo_build.lock
 
+# Hugo module vendor directory (created by `hugo mod vendor`; CI fetches modules directly)
+_vendor/
+
 # Hugo module cache (Go module cache is managed outside the repo)
 /tmp/
 
