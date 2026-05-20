@@ -5,12 +5,14 @@ draft: false
 tags:
   - blog
   - github
-series: https://chrisvoo.github.io/posts/part-1-building-blog-github-configuring-hugo/
+series: ''
 summary: Enabling comments under your posts and create a custom favicon
 comments: true
 ---
 
 In this part we'll enable the possibility for the user with a Github account to comment our posts. We'll use [Giscus](https://giscus.app/) for this.
+
+💡 Read [Part 1: building a blog with GitHub - Configuring Hugo](https://chrisvoo.github.io/posts/part-1-building-blog-github-configuring-hugo/) if you've missed it.
 
 Since Congo, the Hugo template used in the first part of this tutorial, does **not** have built-in Giscus config keys, we'll wire it via a custom partial.
 
