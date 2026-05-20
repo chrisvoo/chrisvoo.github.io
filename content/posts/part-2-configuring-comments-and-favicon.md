@@ -10,6 +10,8 @@ summary: Enabling comments under your posts and create a custom favicon
 comments: true
 ---
 
+![LIKE - Photo by https://unsplash.com/@matscha](https://images.unsplash.com/photo-1564416437164-e2d131e7ec07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NTF8MHwxfHNlYXJjaHwxMTh8fGNvbW1lbnR8ZW58MHx8fHwxNzc5MzA2MTU0fDA&ixlib=rb-4.1.0&q=80&w=1080)
+
 In this part we'll enable the possibility for the user with a Github account to comment our posts. We'll use [Giscus](https://giscus.app/) for this.
 
 💡 Read [Part 1: building a blog with GitHub - Configuring Hugo](https://chrisvoo.github.io/posts/part-1-building-blog-github-configuring-hugo/) if you've missed it.
