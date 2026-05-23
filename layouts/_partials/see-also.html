@@ -1,0 +1,19 @@
+{{ with .Params.see_also }}   
+<div class="see-also-container">
+    <span class="see-also-heading">See also:</span>
+    <ul class="see-also-list">
+      {{ range . }}
+        {{ $page := $.Site.GetPage . }}
+        {{ if $page }}
+          <li>
+            <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
+          </li>
+        {{ else }}
+          <li>
+            <a href="{{ . | relURL }}">{{ . }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

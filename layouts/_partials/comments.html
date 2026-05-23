@@ -1,5 +1,6 @@
 {{ if .Params.comments | default true }}
-<script src="https://giscus.app/client.js"
+    {{ partial "see-also.html" . }}
+    <script src="https://giscus.app/client.js"
         data-repo="chrisvoo/chrisvoo.github.io"
         data-repo-id="R_kgDOScawuA"
         data-category="Blog comments"
@@ -13,5 +14,5 @@
         data-lang="en"
         crossorigin="anonymous"
         async>
-</script>
+    </script>
 {{ end }}

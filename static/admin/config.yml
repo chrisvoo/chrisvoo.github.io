@@ -18,7 +18,14 @@ collections:
       - { name: "date",     label: "Date",          widget: "datetime" }
       - { name: "draft",    label: "Draft",         widget: "boolean", default: false }
       - { name: "tags",     label: "Tags",          widget: "list",    required: false }
-      - { name: "series",   label: "Series",        widget: "string",  required: false }
       - { name: "summary",  label: "Summary",       widget: "text",    required: false }
       - { name: "comments", label: "Enable comments", widget: "boolean", default: true }
       - { name: "body",     label: "Content",       widget: "markdown" }
+      - label: "See Also (Related Posts)"
+        name: "see_also"
+        widget: "relation"
+        collection: "posts" # Targets this same collection
+        search_fields: ["title"]
+        value_field: "/posts/{{slug}}/" # Saves the URL format you wanted
+        multiple: true
+        required: false

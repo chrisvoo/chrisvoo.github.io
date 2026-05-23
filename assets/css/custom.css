@@ -326,3 +326,71 @@ html:not(.dark) .chroma {
     transform: none;
   }
 }
+
+/* ==========================================
+Light Mode Styling (Fallback)
+========================================== */
+.see-also-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid #0066cc; /* Matches Congo Light Primary Blue */
+  background-color: #f3f4f6;      /* Light gray background */
+}
+.see-also-heading {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+.see-also-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.see-also-list li {
+  margin-bottom: 0.5rem;
+}
+.see-also-list li:last-child {
+  margin-bottom: 0;
+}
+.see-also-list a {
+  font-weight: 500;
+  color: #0066cc;
+  text-decoration: none;
+}
+.see-also-list a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+Dark Mode Override 
+(Triggers natively via Congo's dark engine)
+========================================== */
+html.dark .see-also-container,
+.dark .see-also-container {
+  background-color: #35233b;     /* Blends with Congo's deep dark article background */
+  border-left-color: #60a5fa;    /* High-contrast blue accent for dark mode */
+}
+
+html.dark .see-also-heading,
+.dark .see-also-heading {
+  color: #e5e7eb;                /* Soft white text */
+}
+
+html.dark .see-also-list a,
+.dark .see-also-list a {
+  color: #60a5fa;                /* Links color matching the dark accent */
+}
+
+/* Remove Tailwind Typography's automatic visual backticks around inline code */
+.prose code::before,
+.prose code::after {
+  content: "" !important;
+}
+
+/* Widen the entire article layout (header, body section, and comments) to match the site width */
+article .max-w-prose {
+  max-width: 100% !important;
+}
