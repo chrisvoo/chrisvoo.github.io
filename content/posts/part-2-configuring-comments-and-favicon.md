@@ -1,13 +1,13 @@
 ---
-title: 'Part 2: configuring comments and favicon'
+title: 'Part 2: Configuring comments and favicon'
 date: 2026-05-20T20:49:00
 draft: false
 tags:
   - blog
   - github
-series: ''
 summary: Enabling comments under your posts and create a custom favicon
 comments: true
+series: ''
 ---
 
 ![LIKE - Photo by https://unsplash.com/@matscha](https://images.unsplash.com/photo-1564416437164-e2d131e7ec07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NTY3NTF8MHwxfHNlYXJjaHwxMTh8fGNvbW1lbnR8ZW58MHx8fHwxNzc5MzA2MTU0fDA&ixlib=rb-4.1.0&q=80&w=1080)

@@ -1,14 +1,14 @@
 ---
-title: 'Part 1: building a blog with GitHub - Configuring Hugo'
+title: 'Part 1: Building a blog with GitHub - Configuring Hugo'
 date: 2026-05-18T20:34:00
 draft: false
 tags:
   - blog
   - cms
   - github
-series: ''
 summary: First part of a series of posts for building a blog with GitHub
 comments: true
+series: ''
 ---
 
 ![A woman writing a blog post about how to create a blog](/images/uploads/Gemini_Generated_Image_sy58jjsy58jjsy58.png)
