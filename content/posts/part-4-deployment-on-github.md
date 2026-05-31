@@ -20,7 +20,9 @@ As the ending part of the series about publishing a blog on GitHub, we'll explor
 
 ## GitHub Actions Workflow
 
-```plain
+Create `.github/workflows/deploy.yml`:
+
+```yaml
 name: Deploy Blog
 
 on:
