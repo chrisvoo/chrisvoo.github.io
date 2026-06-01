@@ -365,7 +365,7 @@ Light Mode Styling (Fallback)
 }
 
 /* ==========================================
-Dark Mode Override 
+Dark Mode Override
 (Triggers natively via Congo's dark engine)
 ========================================== */
 html.dark .see-also-container,
@@ -393,4 +393,16 @@ html.dark .see-also-list a,
 /* Widen the entire article layout (header, body section, and comments) to match the site width */
 article .max-w-prose {
   max-width: 100% !important;
+}
+
+@media (max-width: 640px) {
+  /* Target the home link specifically to override the inline 3em */
+  header nav a[href="/"] {
+    font-size: clamp(1.8rem, 7vw, 3em) !important; 
+  }
+  
+  /* Force the text to stay on one line */
+  header nav a[href="/"] span {
+    white-space: nowrap;
+  }
 }
