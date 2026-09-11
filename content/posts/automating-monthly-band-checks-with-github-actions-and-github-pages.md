@@ -1,7 +1,7 @@
 ---
 title: Automating Monthly Band Checks with GitHub Actions and GitHub Pages
 date: 2026-09-11T22:28:00
-draft: true
+draft: false
 tags:
   - musicbrainz
   - api
