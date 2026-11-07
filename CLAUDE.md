@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 hugo server -D
 
 # Build the site for production
-hugo --minify --baseURL "https://chrisvoo.github.io/blog/"
+hugo --minify --baseURL "https://chrisvoo.github.io/" --buildFuture
 
 # Create a new post (generates content/posts/<name>.md from archetypes/default.md)
 hugo new posts/<slug>.md
@@ -23,7 +23,9 @@ hugo config
 
 ## Architecture
 
-This is a [Hugo](https://gohugo.io/) static site using the [Congo](https://jpanther.github.io/congo/) theme (v2.13.0) loaded as a Hugo Module (Go module), not a git submodule. The site is deployed to GitHub Pages at `https://chrisvoo.github.io/blog/` via the workflow in `.github/workflows/deploy.yml` on every push to `main`.
+This is a [Hugo](https://gohugo.io/) static site using the [Congo](https://jpanther.github.io/congo/) theme (v2.14.0, needs Hugo >= 0.158.0) loaded as a Hugo Module (Go module), not a git submodule. The site is deployed to GitHub Pages at `https://chrisvoo.github.io/` (site root, no subpath) via the workflow in `.github/workflows/deploy.yml` on every push to `main`. CI pins Hugo (`hugo-version`); bump it together with local Hugo.
+
+A local `_vendor/` directory (gitignored) makes Hugo ignore module updates, so `hugo mod get` appears to do nothing. Delete `_vendor/` before upgrading the theme. CI never has it.
 
 ### Config split (`config/_default/`)
 
@@ -45,7 +47,10 @@ Congo places its templates under `layouts/_partials/` (note the underscore prefi
 
 Currently overridden:
 - `layouts/_partials/functions/warnings.html` — suppresses outdated Congo config-rename warnings
-- `layouts/comments.html` — Giscus comment widget (repo: `chrisvoo/blog`, category: "Blog comments")
+- `layouts/_partials/comments.html` — Giscus comment widget (repo: `chrisvoo/chrisvoo.github.io`, category: "Blog comments")
+- `layouts/_partials/sharing-links.html` — copy of Congo's partial with `site.Data` replaced by `hugo.Data` (deprecation fix; delete when Congo fixes it upstream)
+- `layouts/_partials/favicons.html`, `logo.html`, `see-also.html` — favicons, logo, and the `see_also` related-posts block
+- `layouts/index.html` — custom home page (hero section); styles live in `assets/css/custom.css`
 
 ### Search
 
@@ -53,12 +58,12 @@ Search is powered by Fuse.js (client-side, no server). Two things must be true f
 1. `enableSearch = true` in `params.toml` (at root level, not nested under a section)
 2. `home = ["HTML", "RSS", "JSON"]` in `hugo.toml` `[outputs]` — this makes Hugo render `index.json`, the search index Fuse.js fetches
 
-The search index is visible at `/blog/index.json`.
+The search index is visible at `/index.json`.
 
 ### CMS
 
-A Decap/Sveltia CMS is configured at `/admin` (`static/admin/`). It writes posts directly to `content/posts/` via the GitHub API against the `main` branch. Media uploads go to `static/images/uploads/` with a public path prefix of `/blog/images/uploads/` to account for the site's subpath `baseURL`.
+Sveltia CMS (version pinned in `static/admin/index.html`) is served at `/admin/`. It writes posts directly to `content/posts/` via the GitHub API against the `main` branch of `chrisvoo/chrisvoo.github.io`. Login uses a Personal Access Token, so no OAuth proxy exists. Media uploads go to `static/images/uploads/` with a public path of `/images/uploads`.
 
 ### Content frontmatter
 
-New posts use TOML frontmatter (`+++` delimiters, from `archetypes/default.md`). Posts support: `title`, `date`, `draft`, `tags`, `series`, `summary`, `comments` (bool, defaults to true for Giscus).
+`hugo new` creates TOML frontmatter (`+++`, from `archetypes/default.md`). Sveltia writes YAML frontmatter (`---`). Both work. Posts support: `title`, `date`, `draft`, `tags`, `series`, `summary`, `comments` (bool, defaults to true for Giscus), `see_also` (list of post URLs such as `/posts/<slug>/`).
