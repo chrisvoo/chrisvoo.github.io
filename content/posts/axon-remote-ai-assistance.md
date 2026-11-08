@@ -35,6 +35,7 @@ I've also some documents about IT, books, and the like, but I admit that 95% of 
 
 ### Entering Axon
 
+The code is hosted at [https://github.com/chrisvoo/axon](https://github.com/chrisvoo/axon).
 The architecture is shown by the following diagram:
 
 [![architecture](https://raw.githubusercontent.com/chrisvoo/axon/refs/heads/main/assets/axon-architecture.png "architecture")](https://raw.githubusercontent.com/chrisvoo/axon/refs/heads/main/assets/axon-architecture.png)
@@ -61,7 +62,7 @@ The unpublished Koel skill I have locally serves simple goals:
 * commit and push the updates in my fork
 * rebuild Vue.js app and clear cached stuff on the backend if necessary
 
-So this is an example from the agent side regarding its activity: I've invoked the skill and then we can see it automatically solves the conflicts, since it's instructed to keep my customizations and blend the updates.
+So this is an example from the agent side regarding its activity: I've invoked the skill and then we can see it automatically solves the conflicts, since it's instructed to keep my customisations and blend the updates.
 
 ![Invoking /koel-sync skill](/images/uploads/agent.png "Invoking /koel-sync skill")
 
